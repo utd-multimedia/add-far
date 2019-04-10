@@ -1,7 +1,13 @@
 function objects = readLabels(label_dir,img_idx)
+%readLabels returns details of objects detected from file
+%args:
+%  label_dir: folder of detection results
+%  img_idx: file number
+%returns:
+%  objects: array of object details
 
 % parse input file
-fid = fopen(sprintf('%s/%06d.txt',label_dir,img_idx),'r');
+fid = fopen([label_dir filesep sprintf('%06d.txt', img_idx)],'r');
 C   = textscan(fid,'%s %f %d %f %f %f %f %f %f %f %f %f %f %f %f','delimiter', ' ');
 fclose(fid);
 

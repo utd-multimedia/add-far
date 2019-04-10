@@ -1,12 +1,23 @@
 function[a1_dir, a2_dir] = findAttackDir(riskF_Ex, attack)
+%findAttackDir returns directories for attacked data
+%args:
+%  riskF_Ex risk factor value
+%  attack Name of attack type
+%returns:
+%  a1_dir: directory for Set 1
+%  a2_dir: directory for Set 2
 
-easy_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet\AugmentedDataset\Easy\';
-med_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet\AugmentedDataset\Medium\';
-hard_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet\AugmentedDataset\Hard\';
+config_file = 'config.json';
+config = jsondecode(fileread(config_file));
+paths = config.paths;
 
-easy_dir1 = 'dataset\KITTI\object\AugmentedDataset\Easy\';
-med_dir1 = 'dataset\KITTI\object\AugmentedDataset\Medium\';
-hard_dir1 = 'dataset\KITTI\object\AugmentedDataset\Hard\';
+easy_dir = paths.easy_dir;
+med_dir = paths.med_dir;
+hard_dir = paths.hard_dir;
+
+easy_dir1 = paths.easy_dir_1;
+med_dir1 = paths.med_dir_1;
+hard_dir1 = paths.hard_dir_1;
 
 if(riskF_Ex > 0.6)                              %% Hard
     a1_dir = sprintf('%s%s', easy_dir, attack);

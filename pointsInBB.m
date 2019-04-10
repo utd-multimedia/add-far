@@ -1,4 +1,11 @@
 function[id] = pointsInBB(P, corners)
+%pointsInBB returns mask for points in bounding box
+%args:
+%  P: point cloud
+%  corners: of bounding box
+%returns:
+%  id: mask for points in P that are in bounding box
+%
 %   [3]
 %   ^    [6]
 %   |   /

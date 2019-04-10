@@ -1,7 +1,15 @@
 function [FinalTr_cam_to_velo, FinalTr_velo_to_Cam ,FinalTr_vel_to_leftI] = readCalibration(calib_dir,img_idx,cam)
+%readCalibration returns transformation matrices based on calibration data
+%args:
+%  calib_dir: directory containing calibration files
+%  img_idx: file number
+%returns:
+%  FinalTr_cam_to_vel: camera to velodyne transformation matrix
+%  FinalTr_velo_to_Cam: velodyne to camera transformation matrix
+%  FinalTr_vel_to_leftI: !needs doc!!!
 
   % load R_rect and velo_to_cam transformation matrix
-  P = dlmread(sprintf('%s/%06d.txt',calib_dir,img_idx),' ',0,1);
+  P = dlmread([calib_dir filesep sprintf('%06d.txt', img_idx)],' ',0,1);
   
   
   %%% Projection matrix for left RGB image
