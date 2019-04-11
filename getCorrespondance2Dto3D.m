@@ -1,5 +1,13 @@
-function[minD, minIdx] = getCorrespondance2Dto3D(objects, C1)
-b = [objects(1).x1 objects(1).y1 objects(1).x2 objects(1).y2];
+function[minD, minIdx] = getCorrespondance2Dto3D(object, C1)
+%getCorrespondance2Dto3D returns closest 2D bounding box to given object
+%args:
+%  object: details of object, including 2D bounding box
+%  C1: cell array of 2D bounding boxes
+%returns:
+%  minD: disparity between closest 2D bounding box and object
+%  minIdx: index of closest 2D bounding box in C1
+
+b = [object(1).x1 object(1).y1 object(1).x2 object(1).y2];
 
 dist = zeros(1,size(C1{2},1));
 for j = 1:size(C1{2},1)

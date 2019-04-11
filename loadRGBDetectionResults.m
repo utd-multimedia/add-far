@@ -1,13 +1,24 @@
 function[C3, C4] = loadRGBDetectionResults()
+%loadRGBDetectionResults returns results of object detection in RGB images
+% from file
+%returns:
+%  C3: cell array of sorted data
+%  C4: cell array of indices for certain xxx.png
 
 %%%%%%%%%% loading rgb_detection results
 
 % parse input file
-fid = fopen('D:\3DForensics\Datasets\KITTI_3D_ObjDet\rgb_detections\rgb_detection_train.txt','r');
+config_file = 'config.json';
+config = jsondecode(fileread(config_file));
+paths = config.paths;
+
+train_file = paths.rgb_detections_res_train;
+val_file = paths.rgb_detections_res_val;
+fid = fopen(train_file,'r');
 C1   = textscan(fid,'%s %d %f %d %d %d %d','delimiter', ' ');
 fclose(fid);
 
-fid = fopen('D:\3DForensics\Datasets\KITTI_3D_ObjDet\rgb_detections\rgb_detection_val.txt','r');
+fid = fopen(val_file,'r');
 C   = textscan(fid,'%s %d %f %d %d %d %d','delimiter', ' ');
 fclose(fid);
 
@@ -34,7 +45,7 @@ C3{1,7} = C2{1,7}(resID);
 
 
 for i = 1:size(res,1)
-Csp1 = strsplit(C3{1,1}{i,1}, '/');
+Csp1 = strsplit(C3{1,1}{i,1}, filesep);
 Csp2 = strsplit(Csp1{6},'.');
 C4{1,1}{i,1} = str2double(Csp2{1});     %%% C4 will give indices for certain xxx.png
 end

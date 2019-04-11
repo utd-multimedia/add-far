@@ -13,6 +13,5 @@
     "root_dir_create_Attacks": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet",            
     "dataset_dir": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset",
     "dataset_dir_E5" :  "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset\\Easy\\Attack5" 
-   
   }
 }
