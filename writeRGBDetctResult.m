@@ -1,13 +1,18 @@
 function[] = writeRGBDetctResult(C1, C_1, a1_dir, a2_dir)
+%writeRGBDetctResult write RGB detection results to file
+%C1: original data
+%C_1: adjusted data
+%a1_dir: directory for C1 output, corresponds to set 1
+%a2_dir: directory for C_1 output, corresponds to set 2
 
-a=dir([sprintf('%s\\image_2\\',a1_dir) '/*.png']);
+a=dir([a1_dir filesep 'image_2' filesep '*.png']);
 cnt1=size(a,1);
 
 
-fid = fopen(sprintf('%s\\%s', a1_dir,'rgb_detections\rgb_detection.txt'),'a+');
+fid = fopen([a1_dir filesep 'rgb_detections' filesep 'rgb_detection.txt'],'a+');
 
 for i = 1:size(C1{1,1},1)
-    pathN = sprintf('%s\\image_2\\%06d.png', a2_dir, cnt1-1);
+    pathN = [a2_dir filesep 'image_2' filesep sprintf('%06d.png',cnt1-1)];
     label = C1{1,2}(i);
     confd = C1{1,3}(i);
     xmin = C1{1,4}(i);
@@ -20,12 +25,12 @@ end
 
 fclose(fid);
 
-a=dir([sprintf('%s\\image_2_mod\\',a1_dir) '/*.png']);
+a=dir([a1_dir filesep 'image_2_mod' filesep '*.png']);
 cnt1=size(a,1);
-fid = fopen(sprintf('%s\\%s', a1_dir,'rgb_detections\rgb_detection_mod.txt'),'a+');
+fid = fopen([a1_dir filesep 'rgb_detections' filesep 'rgb_detection_mod.txt'],'a+');
 
 for i = 1:size(C_1{1,1},1)
-    pathN = sprintf('%s\\image_2_mod\\%06d.png', a2_dir, cnt1-1);
+    pathN = [a2_dir filesep 'image_2_mod' filesep sprintf('%06d.png',cnt1-1)];
     label = C_1{1,2}(i);
     confd = C_1{1,3}(i);
     xmin = C_1{1,4}(i);

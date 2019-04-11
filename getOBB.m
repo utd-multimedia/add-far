@@ -1,4 +1,9 @@
 function[OBB] = getOBB(corners)
+%getOBB returns cell array of bounding boxes for objects
+%args:
+%  corners: cell array of corners, one cell per object
+%returns:
+%  OBB: cell array of bounding boxes, one cell per object
 
 %   [3]
 %   ^    [6]

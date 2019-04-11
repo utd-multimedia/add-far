@@ -1,6 +1,11 @@
 function[] = writeLabels(objects, label_dir,img_idx)
+%writeLabels write details of objects in image
+%objects: array of objects in image
+%label_dir: output directory
+%img_idx: image index
+
 % parse input file
-fid = fopen(sprintf('%s/%06d.txt',label_dir,img_idx),'w');
+fid = fopen([label_dir filesep sprintf('%06d.txt', img_idx)],'w');
 
 
 for i = 1:size(objects,2)
