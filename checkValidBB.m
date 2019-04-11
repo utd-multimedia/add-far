@@ -6,7 +6,7 @@ function[selectedBBDVelo_valid, selectedBBDVelo_valid1] = checkValidBB(selectedB
 % 'selectedBBDVelo_valid1'.
 % Next, this bounding box region must be replaced with another region from
 % the same image to conceal the object of interest. The region that must be
-% copied is stored in ?selectedBBDVelo_valid?.
+% copied is stored in 'selectedBBDVelo_valid'.
 % In fig: subtractiveAttackExplanationImage.png:
 % Red box is 'selectedBBDVelo_valid1'
 % Green box is 'selectedBBDVelo_valid'.

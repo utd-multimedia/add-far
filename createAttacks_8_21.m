@@ -37,7 +37,6 @@ image_dir = fullfile(root_dir,[data_set '/image_' num2str(cam)]);
 calib_dir = fullfile(root_dir,[data_set '/calib']);
 
 % get sub-directories for creating dataset
-%dataset_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet\AugmentedDataset';
 dataset_dir = paths.dataset_dir;
 point_dir1 = fullfile(dataset_dir,[data_set '/velodyne']);
 label_dir1 = fullfile(dataset_dir,[data_set '/label_' num2str(cam)]);

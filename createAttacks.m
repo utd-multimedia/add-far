@@ -17,8 +17,7 @@ config_file = 'config.json';
 config = jsondecode(fileread(config_file));
 paths = config.paths;
 
-% options
-%root_dir = 'E:\3DForensics\Datasets\KITTI_3D_ObjDet';          
+% options         
 root_dir = paths.root_dir;
 data_set = 'training';
 
