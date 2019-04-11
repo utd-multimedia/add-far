@@ -1,4 +1,12 @@
 function corners_leftI = cornersVelo2LeftI(corners_3DVelo, Tr_velo_to_leftI, i, w, h)
+% cornersVelo2LeftI converts to corresponding corners in 2d BB
+% args:
+% corners_3DVelo 8 corners of the Bounding Box
+% Tr_velo_to_leftI transformation matrix
+% i bounding box index
+% w width
+% h height
+
 
 % Number of objects detected
 % Nobj = size(corners_3DVelo,2);

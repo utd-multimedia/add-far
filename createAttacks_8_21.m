@@ -18,10 +18,16 @@ disp('======= Create automated forged dataset =======');
 %%%%%%%%%% Loadin RGB detection results and mergin them
 [C3, C4] = loadRGBDetectionResults();
 
+config_file = 'config.json';
+config = jsondecode(fileread(config_file));
+paths = config.paths;
 
 % options
-root_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet';
+% root_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet';
+root_dir = paths.root_dir_create_Attacks;
 data_set = 'training';
+
+
 
 % get sub-directories
 cam = 2; % 2 = left color camera
@@ -31,7 +37,8 @@ image_dir = fullfile(root_dir,[data_set '/image_' num2str(cam)]);
 calib_dir = fullfile(root_dir,[data_set '/calib']);
 
 % get sub-directories for creating dataset
-dataset_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet\AugmentedDataset';
+%dataset_dir = 'D:\3DForensics\Datasets\KITTI_3D_ObjDet\AugmentedDataset';
+dataset_dir = paths.dataset_dir;
 point_dir1 = fullfile(dataset_dir,[data_set '/velodyne']);
 label_dir1 = fullfile(dataset_dir,[data_set '/label_' num2str(cam)]);
 image_dir1 = fullfile(dataset_dir,[data_set '/image_' num2str(cam)]);
@@ -45,12 +52,12 @@ objects_Ex = readLabels(label_dir, idx_Ex);
 [Tr_cam_to_velo_Ex, Tr_velo_to_cam_Ex, Tr_velo_to_leftI_Ex] = readCalibration(calib_dir,idx_Ex,cam);
 
 %for bin files
-fid = fopen(sprintf('%s/%06d.bin',point_dir,idx_Ex),'rb');
+fid = fopen([point_dir filesep sprintf('%06d.bin',idx_Ex)],'rb');
 velo_Ex = fread(fid,[4 inf],'single')';
 fclose(fid);
 
 %%%% extract rgb images of the forged data
-Im_Ex = imread(sprintf('%s/%06d.png',image_dir,idx_Ex));
+Im_Ex = imread([image_dir filesep sprintf('%06d.png',idx_Ex)]);
 Im_Ex1 = Im_Ex(ceil(objects_Ex(1).y1):ceil(objects_Ex(1).y2),ceil(objects_Ex(1).x1):ceil(objects_Ex(1).x2),:);
 
 %%%% 2d rgb detection results for forged frame idx_EX
@@ -81,11 +88,11 @@ for idx = 5001:7480
     [Tr_cam_to_velo, Tr_velo_to_cam, Tr_velo_to_leftI] = readCalibration(calib_dir,idx,cam);
     
     %for bin files
-    fid = fopen(sprintf('%s/%06d.bin',point_dir,idx),'rb');
+    fid = fopen([point_dir filesep sprintf('%06d.bin',idx)],'rb');
     velo = fread(fid,[4 inf],'single')';
     fclose(fid);
     
-    Im = imread(sprintf('%s/%06d.png',image_dir,idx));
+    Im = imread([image_dir filesep sprintf('%06d.png',idx)]);
     
     
     

@@ -1,5 +1,9 @@
 function corners_3D = computeBox3D(object)
-% takes an object and computes 8 corners of the Bounding Box.
+% computeBox3D computes 8 corners of the Bounding Box.
+% args: 
+% object object description
+% returns:
+% 8 coordinates
 
 
 

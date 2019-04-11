@@ -1,4 +1,12 @@
 function[selectedBBDVelo_valid, selectedBBDVelo_valid1] = checkValidBB(selectedBBDVelo, w, h)
+% checkValidBB calculates bounding box for subtractive attack
+% args:
+% selectedBBDVelo target bounding box
+% w number of columns
+% h number of rows
+% returns:
+% selectedBBDVelo_valid source bounding box
+% selectedBBDVelo_valid1 destination bounding box
 
 y1 = ceil(selectedBBDVelo.y1);
 y2= ceil(selectedBBDVelo.y2);

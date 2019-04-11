@@ -14,14 +14,17 @@ clear all; close all;
 disp('======= Create automated forged dataset =======');
 
 % options
-root_dir = 'E:\3DForensics\Datasets\KITTI_3D_ObjDet';
+config_file = 'config.json';
+config = jsondecode(fileread(config_file));
+paths = config.paths;
+root_dir = paths.root_dir;
 data_set = 'training';
 
 % get sub-directories
 cam = 2; % 2 = left color camera
-point_dir = fullfile(root_dir,[data_set '/velodyne']);
-label_dir = fullfile(root_dir,[data_set '/label_' num2str(cam)]);
-calib_dir = fullfile(root_dir,[data_set '/calib']);
+point_dir = fullfile(root_dir,[data_set filesep 'velodyne']);
+label_dir = fullfile(root_dir,[data_set filesep 'label_' num2str(cam)]);
+calib_dir = fullfile(root_dir,[data_set filesep 'calib']);
 
 % N = 7481;   % No. of original pointclouds
 
@@ -36,7 +39,8 @@ objects = readLabels(label_dir, idx);
 Tr_cam_to_velo = readCalibration(calib_dir,idx,cam);
 
 %for bin files
-fid = fopen(sprintf('%s/%06d.bin',point_dir,idx),'rb');
+
+fid = fopen([point_dir filesep sprintf('%06d.bin', idx)],'rb');
 velo = fread(fid,[4 inf],'single')';
 fclose(fid);
 
@@ -48,7 +52,7 @@ objects_Ex = readLabels(label_dir, idx_Ex);
 Tr_cam_to_velo_Ex = readCalibration(calib_dir,idx_Ex,cam);
 
 %for bin files
-fid = fopen(sprintf('%s/%06d.bin',point_dir,idx_Ex),'rb');
+fid = fopen([point_dir filesep sprintf('%06d.bin', idx_Ex)],'rb');
 velo_Ex = fread(fid,[4 inf],'single')';
 fclose(fid);
 
