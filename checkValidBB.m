@@ -3,13 +3,13 @@ function[selectedBBDVelo_valid, selectedBBDVelo_valid1] = checkValidBB(selectedB
 % is valid (satisfying the image size constraints). If not, it is adjusted
 % to satisfy the constraints ( such as min_=x > 0, max_x < image.width,
 % min_y > 0 and max_y < image.height). Modified bounding box is saved as
-% ?selectedBBDVelo_valid1?.
+% 'selectedBBDVelo_valid1'.
 % Next, this bounding box region must be replaced with another region from
 % the same image to conceal the object of interest. The region that must be
 % copied is stored in ?selectedBBDVelo_valid?.
 % In fig: subtractiveAttackExplanationImage.png:
-% Red box is ?selectedBBDVelo_valid1?
-% Green box is ?selectedBBDVelo_valid?.
+% Red box is 'selectedBBDVelo_valid1'
+% Green box is 'selectedBBDVelo_valid'.
 %
 %
 % args:
