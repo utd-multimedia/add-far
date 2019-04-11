@@ -8,6 +8,10 @@
     "hard_dir_1": "dataset\\KITTI\\object\\AugmentedDataset\\Hard",
     "visualize_dir": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset\\Easy\\Attack1\\velodyne",
     "rgb_detections_res_train": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\rgb_detections\\rgb_detection_train.txt",
-    "rgb_detections_res_val": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\rgb_detections\\rgb_detection_val.txt"
+    "rgb_detections_res_val": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\rgb_detections\\rgb_detection_val.txt",
+    "root_dir": "E:\\3DForensics\\Datasets\\KITTI_3D_ObjDet",
+    "root_dir_create_Attacks": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet",            
+    "dataset_dir": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset",
+    "dataset_dir_E5" :  "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset\\Easy\\Attack5" 
   }
 }

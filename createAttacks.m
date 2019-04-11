@@ -13,8 +13,12 @@
 clear all; close all;
 disp('======= Create automated forged dataset =======');
 
-% options
-root_dir = 'E:\3DForensics\Datasets\KITTI_3D_ObjDet';
+config_file = 'config.json';
+config = jsondecode(fileread(config_file));
+paths = config.paths;
+
+% options         
+root_dir = paths.root_dir;
 data_set = 'training';
 
 % get sub-directories
@@ -36,7 +40,7 @@ objects = readLabels(label_dir, idx);
 Tr_cam_to_velo = readCalibration(calib_dir,idx,cam);
 
 %for bin files
-fid = fopen(sprintf('%s/%06d.bin',point_dir,idx),'rb');
+fid = fopen([point_dir filesep sprintf('%06d.bin', idx)],'rb');
 velo = fread(fid,[4 inf],'single')';
 fclose(fid);
 

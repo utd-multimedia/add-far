@@ -1,4 +1,10 @@
 function corners_3DVelo = cornersCam2Velo(corners_3D, Tr_cam_to_velo)
+% cornersCam2Velo transforms object to velodyne coordinates
+% args:
+% corners_3D 8 corners of the Bounding Box
+% Tr_cam_to_velo transformation matrix
+
+
 
 % Number of objects detected
 Nobj = size(corners_3D,2);

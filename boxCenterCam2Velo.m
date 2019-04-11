@@ -1,4 +1,11 @@
 function selectedBBDVelo = boxCenterCam2Velo(selectedBB, Tr_cam_to_velo)
+% boxCenterCam2Velo to transform center of bounding box from camera to
+% velodyne coordinates
+% args:
+% selectedBB array of bounding boxes
+% Tr_cam_to_velo transformation matrix
+% returns:
+% selectedBBDVelo transformed array of bounding boxes
 
 % Number of objects detected
 Nobj = size(selectedBB,2);
