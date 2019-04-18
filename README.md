@@ -9,8 +9,8 @@ The dataset can be obtained [here](https://utdallas.box.com/v/add-far).
 
 ## Prerequisites
  - MATLAB
- - KITTI dataset (available [here](http://www.cvlibs.net/datasets/kitti/)
- - KITTI MATLAB Toolbox (available at)
+ - KITTI dataset (available [here](http://www.cvlibs.net/datasets/kitti/))
+ - KITTI MATLAB Toolbox (available [here](https://s3.eu-central-1.amazonaws.com/avg-kitti/devkit_object.zip) or the object development kit from [here](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d))
 
 ## Preparing data folders
  Create the folder hierarchy
