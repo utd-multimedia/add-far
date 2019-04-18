@@ -5,11 +5,11 @@ This repository releases the code for our MMSys 2019 paper. In this paper, we pr
 new dataset, ADD-FAR (Attacked Driving Dataset for Forensics Analysis and Research) that contains forged driving scenarios based on KITTI Vision Benchmark Suite [1]. This dataset is created by identifying objects of interest using automated 3D object detection and carrying out the attacks with different levels of risk as defined in our earlier ACM MM 2018 (see references below) [2]. 
 
 ## Location
-The dataset can be obtained at https://utdallas.box.com/v/add-far
+The dataset can be obtained [here](https://utdallas.box.com/v/add-far).
 
 ## Prerequisites
  - MATLAB
- - KITTI dataset (available at)
+ - KITTI dataset (available [here](http://www.cvlibs.net/datasets/kitti/)
  - KITTI MATLAB Toolbox (available at)
 
 ## Preparing data folders
@@ -64,6 +64,8 @@ In order to use other dataset:
 2. The I/O functions required for loading the dataset must be appropriate.
 
 ## Acknowledgement:
+This material is based upon work supported by the US Army Research Office (ARO) Grant W911NF-17-1-0299. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the ARO.
+
 This code uses the scripts provided in KITTI dataset for loading the dataset.
 
 ## References:
@@ -76,4 +78,4 @@ This code uses the scripts provided in KITTI dataset for loading the dataset.
 License
 ----
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
