@@ -4,8 +4,10 @@
 This repository releases the code for our MMSys 2019 paper. In this paper, we present a
 new dataset, ADD-FAR (Attacked Driving Dataset for Forensics Analysis and Research) that contains forged driving scenarios based on KITTI Vision Benchmark Suite [1]. This dataset is created by identifying objects of interest using automated 3D object detection and carrying out the attacks with different levels of risk as defined in our earlier ACM MM 2018 (see references below) [2]. 
 
-## Location
+## Dataset
 The dataset can be obtained [here](https://utdallas.box.com/v/add-far).
+
+The dataset is based on [the KITTI dataset](http://www.cvlibs.net/datasets/kitti/) [4].
 
 ## Prerequisites
  - MATLAB
@@ -74,6 +76,8 @@ This code uses the scripts provided in KITTI dataset for loading the dataset.
 [2] Andreas Geiger, Philip Lenz, Christoph Stiller, and Raquel Urtasun. 2017. 3D Object Detection Evaluation 2017. http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d.
 
 [3] Charles R Qi, Wei Liu, Chenxia Wu, Hao Su, and Leonidas J Guibas. 2017. Frustum PointNets for 3D Object Detection from RGB-D Data. arXiv preprint arXiv:1711.08488 (2017).
+
+[4] Geiger, Andreas, Philip Lenz, and Raquel Urtasun. "Are we ready for autonomous driving? the kitti vision benchmark suite." 2012 IEEE Conference on Computer Vision and Pattern Recognition. IEEE, 2012.
 
 License
 ----
