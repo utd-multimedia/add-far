@@ -91,7 +91,8 @@ extract = velo_Ex(id_Ex,:);
 extract(:,1:3) = extract(:,1:3)+ transPos;
 
 % %% Extracting forged data
-% P = dlmread('E:\3DForensics\Datasets\KITTI\Kitti_txt_data\road\2011_09_26\2011_09_26_drive_0052_sync\velodyne_points\txt_points\33.txt');
+% text_file = paths.forged_data_text_file;
+% P = dlmread(text_file);
 % idEx = P(:,1) > 5.2 & P(:,1) < 7.4 & P(:,2) > (-1.5) & P(:,2) < 0.9 & P(:,3) > (-1.65) & P(:,3) < (-0.09);
 % extract = P(idEx,:);
 
