@@ -1,4 +1,8 @@
 function[collide] = getCollision(OBB1, OBB2)
+% getCollision Check if bounding box corresponding to two different object
+% intersect with each other or not
+% OBB1 bounding box of object 1
+% OBB2 bounding box of object 2
 
 RPos = OBB2.pos - OBB1.pos;
 a1 = getSeparatingPlane(RPos, OBB1.u, OBB1, OBB2);
