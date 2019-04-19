@@ -12,6 +12,7 @@
     "root_dir": "E:\\3DForensics\\Datasets\\KITTI_3D_ObjDet",
     "root_dir_create_Attacks": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet",            
     "dataset_dir": "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset",
-    "dataset_dir_E5" :  "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset\\Easy\\Attack5" 
+    "dataset_dir_E5" :  "D:\\3DForensics\\Datasets\\KITTI_3D_ObjDet\\AugmentedDataset\\Easy\\Attack5",
+    "forged_data_text_file": "E:\\3DForensics\\Datasets\\KITTI\\Kitti_txt_data\\road\\2011_09_26\\2011_09_26_drive_0052_sync\\velodyne_points\\txt_points\\33.txt"
   }
 }
