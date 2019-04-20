@@ -77,7 +77,7 @@ This code uses the scripts provided in KITTI dataset for loading the dataset.
 
 [3] Charles R Qi, Wei Liu, Chenxia Wu, Hao Su, and Leonidas J Guibas. 2017. Frustum PointNets for 3D Object Detection from RGB-D Data. arXiv preprint arXiv:1711.08488 (2017).
 
-[4] Geiger, Andreas, Philip Lenz, and Raquel Urtasun. "Are we ready for autonomous driving? the kitti vision benchmark suite." 2012 IEEE Conference on Computer Vision and Pattern Recognition. IEEE, 2012.
+[4] Geiger, Andreas, Philip Lenz, and Raquel Urtasun. "Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite". 2012 IEEE Conference on Computer Vision and Pattern Recognition. IEEE, 2012.
 
 License
 ----
