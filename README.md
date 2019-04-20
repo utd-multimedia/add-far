@@ -1,4 +1,5 @@
 # ADD-FAR: Attacked Driving Dataset for Forensics Analysis and Research
+[![DOI](https://zenodo.org/badge/167889362.svg)](https://zenodo.org/badge/latestdoi/167889362)
 
 ## Introduction
 This repository releases the code for our MMSys 2019 paper. In this paper, we present a
