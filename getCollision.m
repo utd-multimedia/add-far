@@ -1,6 +1,6 @@
 function[collide] = getCollision(OBB1, OBB2)
-% getCollision Check if bounding box corresponding to two different object
-% intersect with each other or not
+% getCollision projects the bounding boxes on axis aligned planes and check
+% their projections on any of the plane intersect with each other to determine if the bounding boxes are colliding
 % OBB1 bounding box of object 1
 % OBB2 bounding box of object 2
 
@@ -25,6 +25,8 @@ collide = ~(a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | a9 | a10 | a11 | a12 | a13 |
 end
 
 function[interS] = getSeparatingPlane(RPos, Plane, OBB1, OBB2)
+% getSeparatingPlane Checks for the given plane if the projection of two bounding boxes on it overlaps or not
+
 a1 = abs(Plane' * (OBB1.halfU * OBB1.u));
 a2 = abs(Plane' * (OBB1.halfV * OBB1.v));
 a3 = abs(Plane' * (OBB1.halfW * OBB1.w));
